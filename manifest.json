@@ -1,0 +1,28 @@
+{
+    "name": "noai",
+    "description": "No AI",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "js": ["delete_gemini.js"],
+            "matches": [
+                "https://*.google.com/*"
+            ]
+        },
+        {
+            "js": ["goto_stackoverflow.js"],
+            "matches": [
+                "https://*.chatgpt.com/*",
+                "https://*.gemini.google.com/*",
+                "https://*.claude.ai/*"
+            ]
+        }
+    ],
+    "permissions": [
+        "storage"
+    ]
+}
